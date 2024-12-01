@@ -13,18 +13,16 @@ func Part2() (int, error) {
 	list2 := data.List2
 
 	frequencyMap := make(map[int]int, len(list1))
-
-	for _, list1Item := range list1 {
-		for _, list2Item := range list2 {
-			if list1Item == list2Item {
-				frequencyMap[list1Item]++
-			}
-		}
+	for _, item := range list2 {
+		frequencyMap[item]++
 	}
 
 	sum := 0
-	for k, v := range frequencyMap {
-		sum += k * v
+	for _, item := range list1 {
+		v, ok := frequencyMap[item]
+		if ok {
+			sum += item * v
+		}
 	}
 
 	return sum, nil
