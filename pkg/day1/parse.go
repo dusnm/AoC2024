@@ -18,11 +18,11 @@ func parse(in string) (Day1Data, error) {
 
 	lines := strings.Split(in, "\n")
 
+	// remove last empty line
+	lines = lines[:len(lines)-1]
+
 	for _, line := range lines {
 		parts := strings.Fields(line)
-		if len(parts) != 2 {
-			continue
-		}
 
 		list1Part, err := strconv.Atoi(parts[0])
 		if err != nil {
