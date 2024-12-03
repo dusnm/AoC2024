@@ -16,10 +16,7 @@ func parse(in string) (Day1Data, error) {
 	list1 := make([]int, 0, 1000)
 	list2 := make([]int, 0, 1000)
 
-	lines := strings.Split(in, "\n")
-
-	// remove last empty line
-	lines = lines[:len(lines)-1]
+	lines := strings.Split(strings.TrimRight(in, "\n"), "\n")
 
 	for _, line := range lines {
 		parts := strings.Fields(line)

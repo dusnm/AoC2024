@@ -3,9 +3,11 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/dusnm/AoC2024/pkg/day1"
 	"log"
 	"os"
+
+	"github.com/dusnm/AoC2024/pkg/day1"
+	"github.com/dusnm/AoC2024/pkg/day2"
 )
 
 var (
@@ -44,6 +46,7 @@ func main() {
 
 	days := [][]func() (int, error){
 		{day1.Part1, day1.Part2},
+		{day2.Part1, day2.Part2},
 	}
 
 	dayIndex := int(dayArg) - 1
